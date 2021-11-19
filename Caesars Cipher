@@ -1,0 +1,17 @@
+function decypher(str) {
+  let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+   let cesarAlphabet = 'NOPQRSTUVWXYZABCDEFGHIJKLM'.split('');
+   let alphabetNum={}
+   let result="";
+   let uncoded=[...str];
+  for(let c=0;c<alphabet.length;c++){
+    alphabetNum[alphabet[c]]=cesarAlphabet[c];
+  }
+  for(let c=0;c<str.length;c++){
+    let isLetter=alphabetNum[uncoded[c]];
+   isLetter?result+=isLetter:result+=uncoded[c];
+  }
+  console.log(result);
+return result
+
+}
