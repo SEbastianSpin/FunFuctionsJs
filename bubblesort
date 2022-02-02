@@ -1,0 +1,15 @@
+function bubbleSort(array) {
+  let myarr=array;
+  let tem;
+  for(let c=0;c<array.length;c++){
+  for(let i=0;i<array.length;i++)
+  if(myarr[c]<myarr[i]){
+    console.log(`${myarr[c]}  ${myarr[i]}`)
+    tem=myarr[i];
+    myarr[i]=myarr[c];
+    myarr[c]=tem;
+    
+  }
+  }
+  console.log(myarr);
+  return array;
