@@ -1,0 +1,20 @@
+function multiplesOf3and5(number) {
+  let sum=0;
+  let multi=1;
+  while(multi*3<number){
+    if((multi*3)%5==0){}
+    else{
+      sum+=multi*3;
+    }
+     multi++
+  }
+   multi=1;
+  while(multi*5<number){
+     sum+=multi*5;
+    multi++
+  }
+  console.log(sum);
+  return sum;
+}
+
+multiplesOf3and5(1000);
