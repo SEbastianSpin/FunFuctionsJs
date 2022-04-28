@@ -1,0 +1,42 @@
+///Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+function timeConversion(s) {
+    
+   let timearr=[...s];
+   if(timearr[0]=='1'&timearr[1]=='2'&&timearr[timearr.length-2]==='A'){
+       timearr.pop();
+       timearr.pop();
+       timearr[0]='0';
+       timearr[1]='0';
+       return timearr.join('');
+   }
+   
+   if(timearr[0]=='1'&timearr[1]=='2'){
+       timearr.pop();
+       timearr.pop();
+       return timearr.join('');
+   } 
+   
+   
+    
+    if(timearr[timearr.length-2]==='P'){
+        timearr.pop();
+        timearr.pop();
+        let hour=((Number(timearr[0]+timearr[1])+12)%24);
+        if(hour<10){
+          timearr[0]='0';
+          timearr[1]= hour.toString(); 
+           console.log(timearr.join(''));
+          return timearr.join('');
+        }
+        let hourarr=[...(hour.toString())];
+         timearr[0]=hourarr[0];
+         timearr[1]= hourarr[1];
+        console.log(timearr.join(''));
+        return timearr.join('');
+    }
+    timearr.pop();
+    timearr.pop();
+    return timearr.join('');
+   
+
+}
