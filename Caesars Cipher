@@ -15,3 +15,19 @@ function decypher(str) {
 return result
 
 }
+
+
+ function caesarCipher(s, k) {
+   let Alphabet="abcdefghijklmnopqrstuvwxyz";
+    Alphabet=[...Alphabet];
+    const word=[...s];
+    return word.map(letter=>{
+       let Caps=letter!==letter.toLowerCase()?true:false;
+         let pos=Alphabet.findIndex(l=>l==letter.toLowerCase())
+         if(pos==-1) return letter;
+         pos=(pos+k)%Alphabet.length;
+      if(Caps) return Alphabet[pos].toUpperCase()
+      return Alphabet[pos]
+    }).join("")
+    
+}
